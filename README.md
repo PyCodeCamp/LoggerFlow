@@ -2,17 +2,14 @@
 
 LoggerFlow is a small demo project that shows how to build a pipeline of cooperating AI agents using CrewAI. The crew reads application logs, analyzes them with a generative model (Google Gemini in this project), and creates Jira tickets for detected incidents.
 
-This README explains how to set up and run the project locally on macOS (tested with Python 3.12.12).
+This README explains how to set up and run the project locally(tested with Python 3.12.12).
 
 ---
 
 ## Prerequisites
 
-- macOS (you are on macOS in this workspace)
 - Python 3.12.12 installed. This project was developed and tested with Python 3.12.12 — please use that version to avoid subtle incompatibilities with Pydantic / CrewAI.
 - Git (to clone or fetch the repo)
-
----
 
 ## Quick project layout
 
@@ -148,6 +145,6 @@ python -m logger_flow.main
 
 ---
 
-If anything here still looks wrong for your environment, tell me what OS/python binary you are using and I will tailor the steps exactly for that setup.
+If anything here still looks wrong for your environment or need any help in setting up the project, drop an email to "admin@pycodecamp.com", you can expect the reponse with 6 hours.
 
 
