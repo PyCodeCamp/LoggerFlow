@@ -1,0 +1,36 @@
+ingest_logs_task:
+  description: >
+    Ingest application log files from the filesystem using the `log_reader` tool.
+    Read all available .log files from the configured log directory and provide
+    the parsed log lines (especially ERROR and WARN entries) as context for
+    further analysis.
+  expected_output: >
+    A textual dump of parsed log lines, one per line, including timestamp, level,
+    service, and message. Focus on lines that indicate errors, warnings, or
+    performance issues.
+  agent: log_ingestor
+
+analyze_logs_task:
+  description: >
+    Analyze the ingested log lines to detect incidents, failures, anomalies,
+    performance issues, or repeated errors. Group related log lines into
+    incidents and describe their impact and likely root cause.
+  expected_output: >
+    A JSON structure with an "incidents" array. Each incident should include:
+    - title: a short human-readable title
+    - description: what happened and why it matters
+    - service: the affected service or component name
+    - severity: one of [low, medium, high, critical]
+  agent: log_analyzer
+
+create_tickets_task:
+  description: >
+    For each detected incident, decide whether it deserves a Jira ticket and,
+    if so, create a concise but informative ticket summary and description.
+    The description should include key log lines, timeframe, service, and
+    suggested next steps.
+  expected_output: >
+    A list of Jira tickets created (or attempted), each with title, service,
+    and URL/ID. If a ticket is not created for a given incident, clearly state
+    why.
+  agent: ticket_creator

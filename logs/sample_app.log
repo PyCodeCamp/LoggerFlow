@@ -1,0 +1,4 @@
+[2025-11-26T12:00:01Z] [INFO] [web] Started request id=abc123 path=/home
+[2025-11-26T12:00:02Z] [ERROR] [auth-service] Failed to authenticate user_id=42 reason=invalid_token
+[2025-11-26T12:01:05Z] [WARN] [db] Slow query took=1200ms sql=SELECT * FROM users WHERE id=42
+[2025-11-26T12:02:20Z] [INFO] [web] Completed request id=abc123 status=200

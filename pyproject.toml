@@ -1,0 +1,24 @@
+[project]
+name = "logger_flow"
+version = "0.1.0"
+description = "Logger_flow using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[google-genai,tools]==1.5.0",
+]
+
+[project.scripts]
+logger_flow = "logger_flow.main:run"
+run_crew = "logger_flow.main:run"
+train = "logger_flow.main:train"
+replay = "logger_flow.main:replay"
+test = "logger_flow.main:test"
+run_with_trigger = "logger_flow.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
